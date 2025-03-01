@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ByteCareers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <h1>ByteCareers</h1>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Who Are We</a></li>
+                <li><a href="#careers">Careers</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <button class="login-btn">Log In</button>
+                <button class="signup-btn">Sign Up</button>
+            </div>
+            <div class="mobile-menu">
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Who Are We</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+                <div class="auth-buttons">
+                    <button class="login-btn">Log In</button>
+                    <button class="signup-btn">Sign Up</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Code Your Future Build Your Career</h1>
+                    <p>Unlock top tech jobs and shape your future in the digital world.</p>
+                    <button class="signup-btn">Get Started</button>
+                </div>
+                <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" alt="Career opportunities" class="hero-image">
+            </div>
+        </section>
+
+        <section class="search-section">
+            <div class="search-bar">
+                <input type="text" id="jobSearch" placeholder="Search job titles..." aria-label="Search jobs" oninput="filterJobs()">
+                <input type="text" id="locationSearch" placeholder="Location" aria-label="Location" oninput="filterJobs()">
+                <input type="text" id="companySearch" placeholder="Company" aria-label="Company" oninput="filterJobs()">
+            </div>
+            
+            <div class="filters">
+                <select class="filter-select" id="jobType" aria-label="Filter by job type" onchange="filterJobs()">
+                    <option value="">Job Type</option>
+                    <option value="full-time">Full Time</option>
+                    <option value="part-time">Part Time</option>
+                    <option value="remote">Remote</option>
+                    <option value="contract">Contract</option>
+                </select>
+                
+                <select class="filter-select" id="experienceLevel" aria-label="Filter by experience level" onchange="filterJobs()">
+                    <option value="">Experience Level</option>
+                    <option value="entry">Entry Level</option>
+                    <option value="mid">Mid Level</option>
+                    <option value="senior">Senior Level</option>
+                    <option value="lead">Lead</option>
+                </select>
+                
+                <select class="filter-select" id="salaryRange" aria-label="Filter by salary range" onchange="filterJobs()">
+                    <option value="">Salary Range</option>
+                    <option value="0-50k">$0 - $50k</option>
+                    <option value="50k-100k">$50k - $100k</option>
+                    <option value="100k-150k">$100k - $150k</option>
+                    <option value="150k+">$150k+</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="job-grid" id="jobGrid">
+            <!-- Jobs will be dynamically inserted here -->
+        </section>
+
+        <section class="featured-companies-section">
+            <div class="section-header">
+                <h2>🚀 Top Companies Hiring</h2>
+                <p>Explore career opportunities with the best employers in the industry!</p>
+            </div>
+        
+            <div class="company-carousel">
+                <div class="company-card">
+                    <img src="https://logo.clearbit.com/microsoft.com" alt="Microsoft Logo" class="company-logo">
+                    <h3 class="company-name">Microsoft</h3>
+                    <p class="company-industry">Technology</p>
+                    <p class="jobs-count">24 Jobs Available</p>
+                    <p class="featured-roles">Hiring: Software Engineers, Cloud Architects</p>
+                    <a href="https://careers.microsoft.com" target="_blank" rel="noopener" class="view-jobs-btn">View Jobs</a>
+                </div>
+        
+                <div class="company-card">
+                    <img src="https://logo.clearbit.com/google.com" alt="Google Logo" class="company-logo">
+                    <h3 class="company-name">Google</h3>
+                    <p class="company-industry">Technology</p>
+                    <p class="jobs-count">18 Jobs Available</p>
+                    <p class="featured-roles">Hiring: ML Engineers, Product Managers</p>
+                    <a href="https://careers.google.com" target="_blank" rel="noopener" class="view-jobs-btn">View Jobs</a>
+                </div>
+        
+                <div class="company-card">
+                    <img src="https://logo.clearbit.com/apple.com" alt="Apple Logo" class="company-logo">
+                    <h3 class="company-name">Apple</h3>
+                    <p class="company-industry">Technology</p>
+                    <p class="jobs-count">15 Jobs Available</p>
+                    <p class="featured-roles">Hiring: iOS Developers, UX Designers</p>
+                    <a href="https://www.apple.com/careers" target="_blank" rel="noopener" class="view-jobs-btn">View Jobs</a>
+                </div>
+                <div class="company-card">
+                    <img src="https://logo.clearbit.com/amazon.com" alt="Amazon Logo" class="company-logo">
+                    <h3 class="company-name">Amazon</h3>
+                    <p class="company-industry">Technology & E-commerce</p>
+                    <p class="jobs-count">30 Jobs Available</p>
+                    <p class="featured-roles">Hiring: AWS Engineers, Data Scientists</p>
+                    <a href="https://www.amazon.jobs" target="_blank" rel="noopener" class="view-jobs-btn">View Jobs</a>
+                </div>
+        
+                <div class="company-card">
+                    <img src="https://logo.clearbit.com/meta.com" alt="Meta Logo" class="company-logo">
+                    <h3 class="company-name">Meta</h3>
+                    <p class="company-industry">Social Media & Technology</p>
+                    <p class="jobs-count">22 Jobs Available</p>
+                    <p class="featured-roles">Hiring: AR/VR Engineers, Frontend Developers</p>
+                    <a href="https://www.metacareers.com" target="_blank" rel="noopener" class="view-jobs-btn">View Jobs</a>
+                </div>
+        
+                <div class="company-card">
+                    <img src="https://logo.clearbit.com/netflix.com" alt="Netflix Logo" class="company-logo">
+                    <h3 class="company-name">Netflix</h3>
+                    <p class="company-industry">Streaming & Entertainment</p>
+                    <p class="jobs-count">12 Jobs Available</p>
+                    <p class="featured-roles">Hiring: Platform Engineers, Content Analytics</p>
+                    <a href="https://jobs.netflix.com" target="_blank" rel="noopener" class="view-jobs-btn">View Jobs</a>
+                </div>
+            </div>
+        
+    </main>
+
+    <script src="script.js">
+       
+    </script>
+</body>
+</html>
