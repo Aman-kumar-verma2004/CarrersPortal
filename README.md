@@ -50,7 +50,7 @@ ByteCareers is a modern career portal designed to help job seekers find their dr
  📥 Installation & Setup  
  1️⃣ Clone the repository  
 
-  git clone https://github.com/yourusername/bytecareers.git
+  git clone  https://github.com/Aman-kumar-verma2004/CarrersPortal.git
   cd bytecareers
 
  2️⃣ Install dependencies  
