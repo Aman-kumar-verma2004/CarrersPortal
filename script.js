@@ -1,5 +1,5 @@
- // Sample job data
- const jobs = [
+// Sample job data
+const jobs = [
     {
         title: "Senior Software Engineer",
         company: "Tech Corp",
@@ -20,7 +20,6 @@
         description: "Create beautiful and intuitive user experiences for our clients.",
         logo: "https://via.placeholder.com/60"
     }
-    // Add more job listings as needed
 ];
 
 function filterJobs() {
@@ -45,23 +44,46 @@ function filterJobs() {
 
 function displayJobs(jobsToShow) {
     const jobGrid = document.getElementById('jobGrid');
+    const noJobsFound = document.getElementById('noJobsFound');
     jobGrid.innerHTML = '';
 
-    jobsToShow.forEach(job => {
-        const jobCard = `
-            <div class="job-card">
-                <img src="${job.logo}" alt="${job.company} Logo" class="company-logo">
-                <h2 class="job-title">${job.title}</h2>
-                <p class="company-name">${job.company}</p>
-                <p class="job-details">📍 ${job.location} • 💼 ${job.type}</p>
-                <p class="job-details">💰 ${job.salary}</p>
-                <p class="job-description">${job.description}</p>
-                <button class="apply-btn">Apply Now</button>
-            </div>
-        `;
-        jobGrid.innerHTML += jobCard;
-    });
+    if (jobsToShow.length === 0) {
+        noJobsFound.style.display = 'block';
+        
+    } else {
+        noJobsFound.style.display = 'none';
+        jobsToShow.forEach(job => {
+            const jobCard = `
+                <div class="job-card">
+                    <img src="${job.logo}" alt="${job.company} Logo" class="company-logo">
+                    <h2 class="job-title">${job.title}</h2>
+                    <p class="company-name">${job.company}</p>
+                    <p class="job-details">📍 ${job.location} • 💼 ${job.type}</p>
+                    <p class="job-details">💰 ${job.salary}</p>
+                    <p class="job-description">${job.description}</p>
+                    <button class="apply-btn">Apply Now</button>
+                </div>
+            `;
+            jobGrid.innerHTML += jobCard;
+        });
+    }
 }
+
+function resetFilters() {
+    // Reset input fields
+    document.getElementById('jobSearch').value = '';
+    document.getElementById('locationSearch').value = '';
+    document.getElementById('companySearch').value = '';
+
+    // Reset dropdowns to default
+    document.getElementById('jobType').value = '';
+    document.getElementById('experienceLevel').value = '';
+    document.getElementById('salaryRange').value = '';
+
+    // Show all jobs again
+    displayJobs(jobs);
+}
+
 
 function toggleMenu() {
     const mobileMenu = document.querySelector('.mobile-menu');

@@ -481,6 +481,54 @@ nav {
     opacity: 1;
 }
 
+.reset-filters-btn{
+    display: none;
+}
+
+.no-jobs-found {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    background-color: black;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.no-jobs-content img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+}
+
+.no-jobs-content h3 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: white;
+}
+
+.no-jobs-content p {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.no-jobs-content .btn-primary {
+    background-color: #0aa876;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.no-jobs-content .btn-primary:hover {
+    background-color: var(--green-700);
+}
+
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
